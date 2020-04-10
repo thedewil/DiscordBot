@@ -1,0 +1,6 @@
+{
+  "main": "instela.js",
+  "dependencies": {
+    "request-debug": "latest"
+  }
+}
