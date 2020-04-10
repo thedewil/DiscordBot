@@ -20,7 +20,9 @@
   },
   "license": "GPL-2.0",
   "dependencies": {
+    "axios": "^0.19.2",
     "bufferutil": "^4.0.1",
+    "cheerio": "^1.0.0-rc.3",
     "cleverbot-node": "^0.2.8",
     "d20": "^1.4.1",
     "discord.js": "^11.5.1",
@@ -36,6 +38,7 @@
     "request": "^2.85.0",
     "request-promise": "^4.2.1",
     "sinon": "1.14.x",
+    "string-sanitizer": "^1.1.1",
     "tumblr.js": "0.0.x",
     "underscore": "1.8.x",
     "urban": "^0.3.1",
