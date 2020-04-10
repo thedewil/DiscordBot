@@ -8,15 +8,15 @@ try {
 }
 
 exports.commands = [
-	"image", //gives top image from google search
-	"rimage", //gives random image from google search
+	"görsel", //gives top image from google search
+	"rgörsel", //gives random image from google search
 	"ggif", //gives random gif from google search
 	"youtube"
 ];
 
-exports.image = {
-	usage: "<search query>",
-	description: "gets the top matching image from google",
+exports.görsel = {
+	usage: "<arama sorgusu>",
+	description: "google'dan eşleşen en üstteki resmi getirir",
 	process: function(bot, msg, args) {
 		if(!AuthDetails || !AuthDetails.youtube_api_key || !AuthDetails.google_custom_search){
 			msg.channel.send("Image search requires both a YouTube API key and a Google Custom Search key!");
@@ -48,9 +48,9 @@ exports.image = {
 	}
 }
 
-exports.rimage = {
-	usage: "<search query>",
-	description: "gets a random image matching tags from google",
+exports.rgörsel = {
+	usage: "<arama sorgusu>",
+	description: "google'dan eşleşen rastgele bir görsel getirir",
 	process: function(bot, msg, args) {
 		if(!AuthDetails || !AuthDetails.youtube_api_key || !AuthDetails.google_custom_search){
 			msg.channel.send( "Image search requires both a YouTube API key and a Google Custom Search key!");
@@ -84,7 +84,7 @@ exports.rimage = {
 
 exports.ggif = {
 	usage : "<search query>",
-	description : "get random gif matching tags from google",
+	description : "google'dan etiket ile eşleşen rastgele bir gif getirir",
 	process : function(bot, msg, args) {
 		//gets us a random result in first 5 pages
 		var page = 1 + Math.floor(Math.random() * 5) * 10; //we request 10 items
@@ -114,8 +114,8 @@ exports.ggif = {
 }
 
 exports.youtube = {
-	usage: "<video tags>",
-	description: "gets youtube video matching tags",
+	usage: "<video etiketi>",
+	description: "youtube'dan etiketle eşleşen video getirir",
 	process: function(bot,msg,suffix){
 		youtube_plugin.respond(suffix,msg.channel,bot);
 	}

@@ -50,8 +50,8 @@ function get_gif(tags, func) {
 }
 
 exports.giphy = {
-	usage: "<image tags>",
-	description: "returns a random gif from giphy matching the tags passed",
+	usage: "<görsel etiketi>",
+	description: "gönderilen etiketle eşleşen rastgele bir gif gönderir",
 	process: function(bot, msg, suffix) {
 		var tags = suffix.split(" ");
 		get_gif(tags, function(id) {

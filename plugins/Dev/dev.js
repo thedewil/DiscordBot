@@ -8,7 +8,7 @@ exports.commands = [
 //a collection of commands primarily useful for developers
 
 exports.pullanddeploy = {
-	description: "bot will perform a git pull master and restart with the new code",
+	description: "git pull master ile kodu güncelleyip yeni kodla yeniden başlatır",
 	process: function(bot,msg,suffix) {
 		msg.channel.send("fetching updates...").then(function(sentMsg){
 			console.log("updating...");
@@ -46,7 +46,7 @@ exports.pullanddeploy = {
 }
 
 exports.version = {
-	description: "returns the git commit this bot is running",
+	description: "botun çalıştırdığı git commit'i gösterir'",
 	process: function(bot,msg,suffix) {
 		var commit = require('child_process').spawn('git', ['log','-n','1']);
 		commit.stdout.on('data', function(data) {
@@ -64,15 +64,15 @@ exports.version = {
 }
 
 exports.myid = {
-	description: "returns the user id of the sender",
+	description: "gönderenin kullanıcı id'sini gösterir",
 	process: function(bot,msg){
 		msg.channel.send(msg.author.id);
 	}
 }
 
 exports.userid = {
-	usage: "[user to get id of]",
-	description: "Returns the unique id of a user. This is useful for permissions.",
+	usage: "[kullanıcı]",
+	description: "Bir kullanıcının unique id'sini görüntüler.",
 	process: function(bot,msg,suffix) {
 		if(msg.mentions.members.size > 0){
 			if(msg.mentions.members.size > 1){

@@ -40,6 +40,7 @@
     "request-promise": "^4.2.1",
     "sinon": "1.14.x",
     "string-sanitizer": "^1.1.1",
+    "tls": "0.0.1",
     "tumblr.js": "0.0.x",
     "underscore": "1.8.x",
     "urban": "^0.3.1",

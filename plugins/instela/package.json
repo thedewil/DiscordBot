@@ -1,6 +1,7 @@
 {
   "main": "instela.js",
   "dependencies": {
-    "request-debug": "latest"
+    "axios": "^0.19.2",
+    "tls": "0.0.1"
   }
 }
