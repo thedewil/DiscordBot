@@ -85,7 +85,7 @@ try{
 	}
 }
 if(!Config.hasOwnProperty("commandPrefix")){
-	Config.commandPrefix = '?'; // set bots prefix
+	Config.commandPrefix = '!'; // set bots prefix
 }
 
 var messagebox;
