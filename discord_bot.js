@@ -21,8 +21,8 @@ console.log("Starting DiscordBot\nNode version: " + process.version + "\nDiscord
 try {
 	var AuthDetails = require("./auth.json");
 } catch (e){
-	console.log("Please create an auth.json like auth.json.example with a bot token or an email and password.\n"+e.stack); // send message for error - no token 
-	process.exit(); 
+	console.log("Please create an auth.json like auth.json.example with a bot token or an email and password.\n"+e.stack); // send message for error - no token
+	process.exit();
 }
 
 // Load custom permissions
@@ -85,7 +85,7 @@ try{
 	}
 }
 if(!Config.hasOwnProperty("commandPrefix")){
-	Config.commandPrefix = '!'; // set bots prefix
+	Config.commandPrefix = '?'; // set bots prefix
 }
 
 var messagebox;
@@ -140,14 +140,14 @@ commands = {	// all commands list below
     "idle": {
 		usage: "[status]",
         description: "Sets bot status to idle.",
-        process: function(bot,msg,suffix){ 
+        process: function(bot,msg,suffix){
 	    bot.user.setStatus("idle").then(console.log).catch(console.error);
 	}
     },
     "online": {
 		usage: "[status]",
         description: "Sets bot status to online.",
-        process: function(bot,msg,suffix){ 
+        process: function(bot,msg,suffix){
 	    bot.user.setStatus("online").then(console.log).catch(console.error);
 	}
     },
@@ -224,22 +224,22 @@ commands = {	// all commands list below
 					if(action.toUpperCase() === "GET") {
 						msg.channel.send("User permissions for " + strResult + " are " + canUse);
 					} else if(action.toUpperCase() === "TOGGLE") {
-						if(Permissions.users.hasOwnProperty(userid)) {	
+						if(Permissions.users.hasOwnProperty(userid)) {
 							Permissions.users[userid][cmd] = !canUse;
 						}
 						else {
 							Permissions.users[userid].append({[cmd] : !canUse});
 						}
 						fs.writeFile("./permissions.json",JSON.stringify(Permissions,null,2));
-						
+
 						msg.channel.send("User permission for " + strResult + " set to " + Permissions.users[userid][cmd]);
 					} else {
 						msg.channel.send('Requires "get" or "toggle" parameter.');
 					}
 				} else {
 					msg.channel.send("Invalid command.")
-				}				
-			}		
+				}
+			}
 		}
 	}
 };
@@ -278,7 +278,7 @@ bot.on("ready", function () {
 		game: {
 			name: Config.commandPrefix+"help | " + bot.guilds.array().length +" Servers"
 		}
-	}); 
+	});
 });
 
 bot.on("disconnected", function () {
